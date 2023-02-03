@@ -1,3 +1,4 @@
+
 local M = {}
 
 M.dap = {
@@ -74,42 +75,34 @@ M.flutterTools = {
   end,
 }
 
-M.autotag = {
-  config = function()
-    require("nvim-ts-autotag").setup()
-  end,
-}
-
 M.lspconfig = {
-  override_options = function ()
-    local lspconfig = require("lspconfig")
-
-      lspconfig.tsserver.setup {
-        on_attach = M.on_attach,
-        filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.js" },
-        cmd = { "typescript-language-server", "--stdio" },
-        capabilities = M.capabilities
-      }
-
-      lspconfig.tailwindcss.setup {
-        on_attach = M.on_attach,
-        capabilities = M.capabilities
-      }
-
-      lspconfig.cssls.setup {
-        on_attach = M.on_attach,
-        capabilities = M.capabilities
-      }
+  config = function()
+    require "plugins.configs.lspconfig"
+    require "custom.plugins.lspconfig"
   end,
 }
+
+-- M.lspInstaller = {
+--   config = function()
+--     require("nvim-lsp-installer").setup{
+--       automatic_installation = false, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+--       ui = {
+--         icons = {
+--             server_installed = "✓",
+--             server_pending = "➜",
+--             server_uninstalled = "✗"
+--         }
+--       }
+--     }
+--   end
+-- }
 
 return {
   ["akinsho/flutter-tools.nvim"] = M.flutterTools,
   ["mfussenegger/nvim-dap"] = M.dap,
   ["beauwilliams/focus.nvim"] = M.focus,
   ["dart-lang/dart-vim-plugin"] = {},
-  ["windwp/nvim-ts-autotag"] = M.autotag,
-  ["windwp/nvim-autopairs"] = {},
+  ["williamboman/nvim-lsp-installer"] = M.lspInstaller,
   ["neovim/nvim-lspconfig"] = M.lspconfig,
 }
 
