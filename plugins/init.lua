@@ -82,20 +82,12 @@ M.lspconfig = {
   end,
 }
 
--- M.lspInstaller = {
---   config = function()
---     require("nvim-lsp-installer").setup{
---       automatic_installation = false, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
---       ui = {
---         icons = {
---             server_installed = "✓",
---             server_pending = "➜",
---             server_uninstalled = "✗"
---         }
---       }
---     }
---   end
--- }
+M.tsautotag = {
+  config = function()
+    require 'custom.plugins.ts-autotag'
+  end,
+}
+
 
 return {
   ["akinsho/flutter-tools.nvim"] = M.flutterTools,
@@ -104,6 +96,7 @@ return {
   ["dart-lang/dart-vim-plugin"] = {},
   ["williamboman/nvim-lsp-installer"] = M.lspInstaller,
   ["neovim/nvim-lspconfig"] = M.lspconfig,
+  ['windwp/nvim-ts-autotag'] = M.tsautotag
 }
 
 
