@@ -94,6 +94,12 @@ M.nullls = {
   end
 }
 
+M.treesitter = {
+  config = function()
+    require 'custom.plugins.treesitter'
+  end
+}
+
 
 return {
   ["akinsho/flutter-tools.nvim"] = M.flutterTools,
@@ -103,7 +109,8 @@ return {
   ["williamboman/nvim-lsp-installer"] = M.lspInstaller,
   ["neovim/nvim-lspconfig"] = M.lspconfig,
   ['windwp/nvim-ts-autotag'] = M.tsautotag,
-  ['jose-elias-alvarez/null-ls.nvim'] = M.nullls
+  ['jose-elias-alvarez/null-ls.nvim'] = M.nullls,
+  ["nvim-treesitter/nvim-treesitter"] = M.treesitter
 }
 
 
