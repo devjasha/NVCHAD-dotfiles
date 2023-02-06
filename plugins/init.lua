@@ -88,6 +88,12 @@ M.tsautotag = {
   end,
 }
 
+M.nullls = {
+  config = function()
+    require 'custom.plugins.null-ls'
+  end
+}
+
 
 return {
   ["akinsho/flutter-tools.nvim"] = M.flutterTools,
@@ -96,7 +102,8 @@ return {
   ["dart-lang/dart-vim-plugin"] = {},
   ["williamboman/nvim-lsp-installer"] = M.lspInstaller,
   ["neovim/nvim-lspconfig"] = M.lspconfig,
-  ['windwp/nvim-ts-autotag'] = M.tsautotag
+  ['windwp/nvim-ts-autotag'] = M.tsautotag,
+  ['jose-elias-alvarez/null-ls.nvim'] = M.nullls
 }
 
 
