@@ -100,6 +100,12 @@ M.treesitter = {
   end
 }
 
+M.neoscroll = {
+  config = function ()
+    require 'custom.plugins.neoscroll'
+  end
+}
+
 
 return {
   ["akinsho/flutter-tools.nvim"] = M.flutterTools,
@@ -110,7 +116,8 @@ return {
   ["neovim/nvim-lspconfig"] = M.lspconfig,
   ['windwp/nvim-ts-autotag'] = M.tsautotag,
   ['jose-elias-alvarez/null-ls.nvim'] = M.nullls,
-  ["nvim-treesitter/nvim-treesitter"] = M.treesitter
+  ["nvim-treesitter/nvim-treesitter"] = M.treesitter,
+  ['karb94/neoscroll.nvim'] = M.neoscroll,
 }
 
 
