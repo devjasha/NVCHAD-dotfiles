@@ -106,6 +106,12 @@ M.neoscroll = {
   end
 }
 
+M.jester = {
+  config = function()
+    require 'custom.plugins.jester'
+  end
+}
+
 
 return {
   ["akinsho/flutter-tools.nvim"] = M.flutterTools,
@@ -118,6 +124,7 @@ return {
   ['jose-elias-alvarez/null-ls.nvim'] = M.nullls,
   ["nvim-treesitter/nvim-treesitter"] = M.treesitter,
   ['karb94/neoscroll.nvim'] = M.neoscroll,
+  ['David-Kunz/jester'] = M.jester
 }
 
 
