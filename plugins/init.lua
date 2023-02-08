@@ -112,6 +112,12 @@ M.jester = {
   end
 }
 
+M.presence = {
+  config = function()
+    require 'custom.plugins.presence'
+  end
+}
+
 
 return {
   ["akinsho/flutter-tools.nvim"] = M.flutterTools,
@@ -124,7 +130,8 @@ return {
   ['jose-elias-alvarez/null-ls.nvim'] = M.nullls,
   ["nvim-treesitter/nvim-treesitter"] = M.treesitter,
   ['karb94/neoscroll.nvim'] = M.neoscroll,
-  ['David-Kunz/jester'] = M.jester
+  ['David-Kunz/jester'] = M.jester,
+  ['andweeb/presence.nvim'] = M.presence
 }
 
 
